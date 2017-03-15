@@ -2,19 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>menu app</title>
+    <title>Menu</title>
   </head>
   <body>
     <h1>{{ restaurant.name }}</h1>
-
+    <a href="{{ url_for('newMenuItem', restaurant_id = restaurant.id) }}">Create new Item</a>
+    <br>
     {% for i in items %}
-
     {{ i.name }}
     <br>
-
     {{ i.description }}
     <br>
-
     {{ i.price }}
     <br>
     <a href="{{ url_for('editMenuItem', restaurant_id  = restaurant.id, menu_id = i.id) }}">Edit</a>
@@ -23,7 +21,5 @@
     <br>
     <br>
     {% endfor %}
-
-
   </body>
 </html>
