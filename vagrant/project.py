@@ -26,12 +26,19 @@ def HelloWorld(restaurant_id):
     return output
 
 #Task1 : create new items
-@app.route('/restaurant/<int:restaurant_id>/')
+@app.route('/restaurant/<int:restaurant_id>/create/')
 def createMenuItem(restaurant_id):
-    return 'Page to create new menu item'
+    return 'Page to create new menu item for %s ' % restaurant_id
+
 #Task2 : edit menu items
+@app.route('/restaurant/<int:restaurant_id>/<int:menu_id>/edit/')
+def editMenuItem(restaurant_id, menu_id):
+    return 'Page to edit menu items for %s ' % restaurant_id
 
 #Task3 : delete menu items
+@app.route('/restaurant/<int:restaurant_id>/<int:menu_id>/delete/')
+def deleteMenuItem(restaurant_id, menu_id):
+    return 'Page to delete menu items from %s menu' % restaurant_id
 
 if __name__ == '__main__':
     app.debug = True
